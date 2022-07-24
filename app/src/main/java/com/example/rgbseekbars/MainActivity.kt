@@ -31,11 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         val obj = object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                val seekbarView = p0?.let { findViewById<SeekBar>(it.id) }
-                when (seekbarView) {
-                    redSeekbar -> redColor.text = p1.toString()
-                    greenSeekbar -> greenColor.text = p1.toString()
-                    blueSeekbar -> blueColor.text = p1.toString()
+                when (p0?.id) {
+                    redSeekbar.id -> redColor.text = p1.toString()
+                    greenSeekbar.id -> greenColor.text = p1.toString()
+                    blueSeekbar.id -> blueColor.text = p1.toString()
                 }
                 setViewColor()
             }
