@@ -1,4 +1,4 @@
-package com.example.myapplicationrgb
+package com.example.rgbseekbars
 
 import android.annotation.SuppressLint
 import android.graphics.Color

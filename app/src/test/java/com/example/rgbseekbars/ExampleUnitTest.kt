@@ -1,4 +1,4 @@
-package com.example.myapplicationrgb
+package com.example.rgbseekbars
 
 import org.junit.Test
 
