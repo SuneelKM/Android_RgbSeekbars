@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">RGB Seekbars</string>
+    <string name="hex">Hex:%1$s</string>
+    <string name="r">R:</string>
+    <string name="g">G:</string>
+    <string name="b">B:</string>
+    <string name="_0">0</string>
+    <string name="hex_000000">Hex:#000000</string>
+    <!--    <string name="sample">%1$d sample text %2$s</string>-->
 </resources>

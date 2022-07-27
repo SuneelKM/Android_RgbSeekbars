@@ -1,6 +1,5 @@
 package com.example.rgbseekbars
 
-import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.SeekBar
@@ -48,13 +47,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    @SuppressLint("SetTextI18n")
     fun setViewColor() {
         val red = redColor.text.toString().toInt()
         val green = greenColor.text.toString().toInt()
         val blue = blueColor.text.toString().toInt()
         colorView.setBackgroundColor(Color.rgb(red, green, blue))
-        hexCode.text = "Hex:" + String.format("#%02X%02X%02X", red, green, blue)
+        hexCode.text = resources.getString(R.string.hex, String.format("#%02X%02X%02X", red, green, blue))
 
     }
 
