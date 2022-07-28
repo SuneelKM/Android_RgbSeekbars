@@ -3,56 +3,47 @@ package com.example.rgbseekbars
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.SeekBar
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.rgbseekbars.databinding.ActivityMainBinding
 import kotlin.String
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var colorView: TextView
-    private lateinit var redColor: TextView
-    private lateinit var greenColor: TextView
-    private lateinit var blueColor: TextView
-    private lateinit var hexCode: TextView
+
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val redSeekbar = findViewById<SeekBar>(R.id.red_seekBar)
-        val greenSeekbar = findViewById<SeekBar>(R.id.green_seekBar)
-        val blueSeekbar = findViewById<SeekBar>(R.id.blue_seekBar)
-        colorView = findViewById(R.id.color_view)
-        redColor = findViewById(R.id.red_color)
-        greenColor = findViewById(R.id.green_color)
-        blueColor = findViewById(R.id.blue_color)
-        hexCode = findViewById(R.id.hex_code)
-
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val obj = object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                when (p0?.id) {
-                    redSeekbar.id -> redColor.text = p1.toString()
-                    greenSeekbar.id -> greenColor.text = p1.toString()
-                    blueSeekbar.id -> blueColor.text = p1.toString()
+                val colorTextView = when (p0?.id) {
+                    binding.redSeekBar.id -> binding.redColor
+                    binding.greenSeekBar.id -> binding.greenColor
+                    else -> binding.blueColor
                 }
+                colorTextView.text = p1.toString()
                 setViewColor()
             }
-            override fun onStartTrackingTouch(p0: SeekBar?) {}
-            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStartTrackingTouch(p0: SeekBar?) = Unit
+            override fun onStopTrackingTouch(p0: SeekBar?) = Unit
         }
 
-        redSeekbar.setOnSeekBarChangeListener(obj)
-        greenSeekbar.setOnSeekBarChangeListener(obj)
-        blueSeekbar.setOnSeekBarChangeListener(obj)
+        binding.redSeekBar.setOnSeekBarChangeListener(obj)
+        binding.greenSeekBar.setOnSeekBarChangeListener(obj)
+        binding.blueSeekBar.setOnSeekBarChangeListener(obj)
 
     }
 
     fun setViewColor() {
-        val red = redColor.text.toString().toInt()
-        val green = greenColor.text.toString().toInt()
-        val blue = blueColor.text.toString().toInt()
-        colorView.setBackgroundColor(Color.rgb(red, green, blue))
-        hexCode.text = resources.getString(R.string.hex, String.format("#%02X%02X%02X", red, green, blue))
+        val red = binding.redColor.text.toString().toInt()
+        val green = binding.greenColor.text.toString().toInt()
+        val blue = binding.blueColor.text.toString().toInt()
+        binding.colorView.setBackgroundColor(Color.rgb(red, green, blue))
+        binding.hexCode.text =
+            resources.getString(R.string.hex, String.format("#%02X%02X%02X", red, green, blue))
 
     }
 
