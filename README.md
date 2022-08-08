@@ -11,3 +11,5 @@ A simple RGB Slider color change app in Kotlin
 * Open the Repo in Android Studio
 * Let the Gradle to build
 * Enjoy!!
+
+* Note: The OldSeekbar branch have the code for similar app using seekbars instead of material design's sliders.
