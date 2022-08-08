@@ -1,169 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/red_text"
-            style="@style/Widget.RGB_Seekbars.TextView"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/r"
-            android:textColor="@color/red"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/red_slider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/red_slider" />
-
-        <TextView
-            android:id="@+id/green_text"
-            style="@style/Widget.RGB_Seekbars.TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/g"
-            android:textColor="@color/green"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/green_slider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/green_slider" />
-
-        <TextView
-            android:id="@+id/blue_text"
-            style="@style/Widget.RGB_Seekbars.TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/b"
-            android:textColor="@color/blue"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/blue_slider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/blue_slider" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/red_slider"
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="16dp"
-            android:scaleX="1"
-            android:scaleY="1"
-            android:stepSize="1"
-            android:valueFrom="0"
-            android:valueTo="255"
-            app:trackColor="@color/red"
-            app:thumbColor="@color/red"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
-            app:layout_constraintStart_toEndOf="@+id/red_text"
-            app:layout_constraintTop_toBottomOf="@+id/color_cardView" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/green_slider"
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="16dp"
-            android:stepSize="1"
-            android:valueFrom="0"
-            android:valueTo="255"
-            app:trackColor="@color/green"
-            app:thumbColor="@color/green"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
-            app:layout_constraintStart_toEndOf="@+id/green_text"
-            app:layout_constraintTop_toBottomOf="@+id/red_slider" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/blue_slider"
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="16dp"
-            android:stepSize="1"
-            android:valueFrom="0"
-            android:valueTo="255"
-            app:trackColor="@color/blue"
-            app:thumbColor="@color/blue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
-            app:layout_constraintStart_toEndOf="@+id/blue_text"
-            app:layout_constraintTop_toBottomOf="@+id/green_slider" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/color_cardView"
-            android:layout_width="200dp"
-            android:layout_height="124dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            tools:context=".MainActivity">
 
             <TextView
-                android:id="@+id/color_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#000000" />
+                android:id="@+id/red_text"
+                style="@style/Widget.RGB_Seekbars.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/r"
+                android:textColor="@color/red"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/red_slider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/red_slider" />
 
-        </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/green_text"
+                style="@style/Widget.RGB_Seekbars.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/g"
+                android:textColor="@color/green"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/green_slider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/green_slider" />
 
-        <TextView
-            android:id="@+id/blue_color"
-            style="@style/Widget.RGB_Seekbars.TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_0"
-            android:textSize="16sp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/blue_slider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/blue_slider"
-            app:layout_constraintTop_toTopOf="@+id/blue_slider" />
+            <TextView
+                android:id="@+id/blue_text"
+                style="@style/Widget.RGB_Seekbars.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/b"
+                android:textColor="@color/blue"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/blue_slider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/blue_slider" />
 
-        <TextView
-            android:id="@+id/green_color"
-            style="@style/Widget.RGB_Seekbars.TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_0"
-            android:textSize="16sp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/green_slider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/green_slider"
-            app:layout_constraintTop_toTopOf="@+id/green_slider" />
+            <com.google.android.material.slider.Slider
+                android:id="@+id/red_slider"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:stepSize="1"
+                android:valueFrom="0"
+                android:valueTo="255"
+                app:colorSlider="@{redColor}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintStart_toEndOf="@+id/red_text"
+                app:layout_constraintTop_toBottomOf="@+id/color_cardView"
+                app:thumbColor="@color/red"
+                app:trackColor="@color/red" />
 
-        <TextView
-            android:id="@+id/red_color"
-            style="@style/Widget.RGB_Seekbars.TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_0"
-            android:textSize="16sp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/red_slider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/red_slider"
-            app:layout_constraintTop_toTopOf="@+id/red_slider" />
+            <com.google.android.material.slider.Slider
+                android:id="@+id/green_slider"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:stepSize="1"
+                android:valueFrom="0"
+                android:valueTo="255"
+                app:colorSlider="@{greenColor}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintStart_toEndOf="@+id/green_text"
+                app:layout_constraintTop_toBottomOf="@+id/red_slider"
+                app:thumbColor="@color/green"
+                app:trackColor="@color/green" />
 
-        <TextView
-            android:id="@+id/hex_code"
-            style="@style/Widget.RGB_Seekbars.TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/hex_000000"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/blue_slider" />
+            <com.google.android.material.slider.Slider
+                android:id="@+id/blue_slider"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:stepSize="1"
+                android:valueFrom="0"
+                android:valueTo="255"
+                app:colorSlider="@{blueColor}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintStart_toEndOf="@+id/blue_text"
+                app:layout_constraintTop_toBottomOf="@+id/green_slider"
+                app:thumbColor="@color/blue"
+                app:trackColor="@color/blue" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/color_cardView"
+                android:layout_width="200dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-</ScrollView>
+                <TextView
+                    android:id="@+id/color_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/blue_color"
+                style="@style/Widget.RGB_Seekbars.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/_0"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/blue_slider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/blue_slider"
+                app:layout_constraintTop_toTopOf="@+id/blue_slider" />
+
+            <TextView
+                android:id="@+id/green_color"
+                style="@style/Widget.RGB_Seekbars.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/_0"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/green_slider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/green_slider"
+                app:layout_constraintTop_toTopOf="@+id/green_slider" />
+
+            <TextView
+                android:id="@+id/red_color"
+                style="@style/Widget.RGB_Seekbars.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/_0"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/red_slider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/red_slider"
+                app:layout_constraintTop_toTopOf="@+id/red_slider" />
+
+            <TextView
+                android:id="@+id/hex_code"
+                style="@style/Widget.RGB_Seekbars.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/hex_000000"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blue_slider" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
